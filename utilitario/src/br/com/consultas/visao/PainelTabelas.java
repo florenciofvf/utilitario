@@ -1,10 +1,12 @@
 package br.com.consultas.visao;
 
 import java.awt.BorderLayout;
+import java.awt.Dimension;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.util.List;
 
+import javax.swing.SwingUtilities;
 import javax.swing.tree.TreePath;
 
 import br.com.consultas.Referencia;
@@ -24,6 +26,7 @@ import br.com.consultas.visao.comp.SplitPane;
 import br.com.consultas.visao.dialog.CampoDialog;
 import br.com.consultas.visao.dialog.DadosDialog;
 import br.com.consultas.visao.modelo.ModeloArvore;
+import br.com.tabela.LinhaTabela;
 import br.com.tabela.Painel;
 
 public class PainelTabelas extends PanelBorderLayout {
@@ -207,9 +210,20 @@ public class PainelTabelas extends PanelBorderLayout {
 					// table.ajustar(getGraphics(), Util.LARGURA_ICONE_ORDENAR);
 					try {
 						br.com.tabela.Tabela tabela = Persistencia.criarTabela(selecionado, formulario.getTabelas());
+
+						br.com.tabela.Tabela tabela2 = Persistencia.criarTabela("select * from candidato", "CANDIDATO");
+						tabela.getLinhas()[10] = new LinhaTabela(tabela2);
+
+						br.com.tabela.Tabela tabela3 = Persistencia.criarTabela("select * from endereco", "ENDEREÇO");
+						tabela2.getLinhas()[3] = new LinhaTabela(tabela3);
+						tabela2.getLinhas()[4] = new LinhaTabela(Persistencia.criarTabela("select * from eleicao", "ELEIÇÃO"));
+
 						painel.setTabela(tabela);
 						painel.configurar();
-						repaint();
+
+						painel.setPreferredSize(new Dimension(tabela.getLargura(), tabela.getAltura()));
+
+						SwingUtilities.updateComponentTreeUI(painel);
 					} catch (Exception ex) {
 						String msg = Util.getStackTrace(getClass().getName() + ".texto()", ex);
 						Util.mensagem(PainelTabelas.this, msg);

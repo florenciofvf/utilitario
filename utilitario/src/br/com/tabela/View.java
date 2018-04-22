@@ -25,4 +25,12 @@ public abstract class View {
 	public abstract void configX(int tab);
 
 	public abstract void configA();
+
+	public int getLargura() {
+		return largura;
+	}
+
+	public int getAltura() {
+		return altura;
+	}
 }

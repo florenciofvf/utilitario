@@ -21,6 +21,10 @@ public class Tabela extends View {
 		}
 	}
 
+	public Linha[] getLinhas() {
+		return linhas;
+	}
+
 	@Override
 	public void desenhar(Graphics g) {
 		cabecalho.desenhar(g);

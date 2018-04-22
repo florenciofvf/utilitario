@@ -165,6 +165,18 @@ public class Persistencia {
 		return dados;
 	}
 
+	public static br.com.tabela.Tabela criarTabela(String sql, String nomeTabela) throws Exception {
+		Connection conn = Persistencia.getConnection();
+		PreparedStatement psmt = conn.prepareStatement(sql);
+		ResultSet rs = psmt.executeQuery();
+
+		br.com.tabela.Tabela tabela = coletar(conn, rs, nomeTabela);
+
+		rs.close();
+
+		return tabela;
+	}
+
 	public static br.com.tabela.Tabela criarTabela(Referencia selecionado, Tabelas tabelas) throws Exception {
 		SQL sql = Util.criarSQL(selecionado, tabelas, null);
 
