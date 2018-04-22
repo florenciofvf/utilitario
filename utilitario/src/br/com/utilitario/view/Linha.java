@@ -6,6 +6,7 @@ import java.awt.Graphics;
 public abstract class Linha extends View {
 	protected final String[] dados;
 	protected final Tabela tabela;
+	protected boolean par;
 
 	public Linha(String[] dados) {
 		this.dados = dados;

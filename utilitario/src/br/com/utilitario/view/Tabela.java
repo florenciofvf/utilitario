@@ -15,6 +15,10 @@ public class Tabela extends View {
 		this.linhaColuna = linhaColuna;
 		this.cabecalho = cabecalho;
 		this.linhas = linhas;
+		int i = 0;
+		for (Linha linha : linhas) {
+			linha.par = i++ % 2 == 0;
+		}
 	}
 
 	public void desenhar(Graphics g) {

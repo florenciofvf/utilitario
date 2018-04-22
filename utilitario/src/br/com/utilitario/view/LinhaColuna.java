@@ -22,7 +22,7 @@ public class LinhaColuna extends Linha {
 
 		for (int i = 0; i < dados.length; i++) {
 			g.drawString(dados[i], xs[i], yFonte);
-			g.drawLine(xs[i], y, xs[i], y + altura);
+			//g.drawLine(xs[i], y, xs[i], y + altura);
 		}
 	}
 

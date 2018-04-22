@@ -15,14 +15,14 @@ public class LinhaCelula extends Linha {
 
 	@Override
 	public void desenhar(int[] xs, Graphics g) {
-		g.setColor(Constantes.COR_CELULA);
+		g.setColor(par ? Constantes.COR_CELULA_PAR : Constantes.COR_CELULA_IMP);
 		g.fillRect(x, y, largura, altura);
 
 		g.setColor(Constantes.COR_FONTE);
 
 		for (int i = 0; i < dados.length; i++) {
 			g.drawString(dados[i], xs[i], yFonte);
-			g.drawLine(xs[i], y, xs[i], y + altura);
+			//g.drawLine(xs[i], y, xs[i], y + altura);
 		}
 	}
 

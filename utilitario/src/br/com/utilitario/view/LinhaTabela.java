@@ -11,7 +11,6 @@ public class LinhaTabela extends Linha {
 	}
 
 	public void desenhar(int[] xs, Graphics g) {
-		desenhar(g);
 		tabela.desenhar(g);
 	}
 

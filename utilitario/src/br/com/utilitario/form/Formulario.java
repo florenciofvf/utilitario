@@ -22,9 +22,10 @@ public class Formulario extends JFrame {
 		super("Util");
 
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
-		setSize(500, 500);
+		setSize(600, 500);
 		montarLayout();
 
+		setLocationRelativeTo(null);
 		setVisible(true);
 	}
 
@@ -46,12 +47,15 @@ public class Formulario extends JFrame {
 	private Tabela criarTabela() {
 		Cabecalho cabecalho = new Cabecalho("Cabeçalho");
 
-		LinhaColuna colunas = new LinhaColuna(new String[] { "NOME", "SOBRENOME" });
+		LinhaColuna colunas = new LinhaColuna(new String[] { "COLUNA-1", "COLUNA-2" });
 
-		Linha[] linhas = new Linha[3];
-		linhas[0] = new LinhaCelula(new String[] { "abc", "fvf" });
-		linhas[1] = criarLinhaTabela();
-		linhas[2] = new LinhaCelula(new String[] { "nome", "filho" });
+		Linha[] linhas = new Linha[6];
+		linhas[0] = new LinhaCelula(new String[] { "MARIA DA SILVA DE OLIVEIRA", "JOSÉ DA SILVA" });
+		linhas[1] = new LinhaCelula(new String[] { "MARIA DA SILVA DE OLIVEIRA", "JOSÉ DA SILVA" });
+		linhas[2] = new LinhaCelula(new String[] { "MARIA DA SILVA DE OLIVEIRA", "JOSÉ DA SILVA" });
+		linhas[3] = criarLinhaTabela();
+		linhas[4] = new LinhaCelula(new String[] { "ANTOFIO FRANCISCO", "CARLA FREIRE" });
+		linhas[5] = new LinhaCelula(new String[] { "ANTOFIO FRANCISCO DE SOUSA E SILVA", "CARLA FREIRE" });
 
 		return new Tabela(cabecalho, colunas, linhas);
 	}
@@ -62,7 +66,7 @@ public class Formulario extends JFrame {
 		LinhaColuna colunas = new LinhaColuna(new String[] { "COLUNA 1", "COLUNA 2" });
 
 		Linha[] linhas = new Linha[1];
-		linhas[0] = new LinhaCelula(new String[] { "valor-1", "valor-2" });
+		linhas[0] = new LinhaCelula(new String[] { "REQUERIMENTO DE TESTE", "valor-2" });
 
 		return new LinhaTabela(new Tabela(cabecalho, colunas, linhas));
 	}
