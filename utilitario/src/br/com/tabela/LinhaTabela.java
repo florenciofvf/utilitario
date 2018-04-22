@@ -1,10 +1,8 @@
-package br.com.utilitario.view;
+package br.com.tabela;
 
 import java.awt.FontMetrics;
 import java.awt.Graphics;
 import java.util.concurrent.atomic.AtomicInteger;
-
-import br.com.utilitario.util.Constantes;
 
 public class LinhaTabela extends Linha {
 

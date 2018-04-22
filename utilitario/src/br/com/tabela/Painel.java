@@ -1,13 +1,10 @@
-package br.com.utilitario.form;
+package br.com.tabela;
 
 import java.awt.FontMetrics;
 import java.awt.Graphics;
 import java.util.concurrent.atomic.AtomicInteger;
 
 import javax.swing.JPanel;
-
-import br.com.utilitario.util.Constantes;
-import br.com.utilitario.view.Tabela;
 
 public class Painel extends JPanel {
 	private static final long serialVersionUID = 1L;

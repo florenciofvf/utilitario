@@ -1,4 +1,4 @@
-package br.com.utilitario.view;
+package br.com.tabela;
 
 import java.awt.FontMetrics;
 import java.awt.Graphics;

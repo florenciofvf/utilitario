@@ -1,11 +1,8 @@
-package br.com.utilitario.view;
+package br.com.tabela;
 
 import java.awt.FontMetrics;
 import java.awt.Graphics;
 import java.util.concurrent.atomic.AtomicInteger;
-
-import br.com.utilitario.util.Constantes;
-import br.com.utilitario.util.Util;
 
 public class Cabecalho extends View {
 	private final String string;

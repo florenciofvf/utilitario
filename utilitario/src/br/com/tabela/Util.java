@@ -1,4 +1,4 @@
-package br.com.utilitario.util;
+package br.com.tabela;
 
 import java.awt.FontMetrics;
 
