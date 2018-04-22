@@ -1,12 +1,12 @@
 package br.com.utilitario.form;
 
-import java.awt.Font;
 import java.awt.FontMetrics;
 import java.awt.Graphics;
 import java.util.concurrent.atomic.AtomicInteger;
 
 import javax.swing.JPanel;
 
+import br.com.utilitario.util.Constantes;
 import br.com.utilitario.view.Tabela;
 
 public class Painel extends JPanel {
@@ -25,12 +25,14 @@ public class Painel extends JPanel {
 	}
 
 	public void configurar() {
-		Font font = getFont();
-		FontMetrics fm = getFontMetrics(font);
+		AtomicInteger yPrincipal = new AtomicInteger(Constantes.Y_PRINCIPAL);
+		FontMetrics fm = getFontMetrics(getFont());
+		int xPrincipal = Constantes.X_PRINCIPAL;
+
 		tabela.configL(fm);
 		tabela.configA();
-		tabela.configY(new AtomicInteger(40));
-		tabela.configX(40);
+		tabela.configY(yPrincipal);
+		tabela.configX(xPrincipal);
 	}
 
 	@Override
