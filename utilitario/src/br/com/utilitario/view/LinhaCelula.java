@@ -21,8 +21,7 @@ public class LinhaCelula extends Linha {
 		g.setColor(Constantes.COR_FONTE);
 
 		for (int i = 0; i < dados.length; i++) {
-			g.drawString(dados[i], xs[i] + Constantes.DELTA_FONTE, yFonte);
-			//g.drawLine(xs[i], y, xs[i], y + altura);
+			g.drawString(dados[i], xs[i] + Constantes.DELTA_X_FONTE, yFonte);
 		}
 	}
 
@@ -34,7 +33,7 @@ public class LinhaCelula extends Linha {
 	@Override
 	public void calcularY(AtomicInteger acumulador) {
 		y = acumulador.getAndAdd(altura);
-		yFonte = y + altura;
+		yFonte = y + altura + Constantes.DELTA_Y_FONTE;
 	}
 
 	@Override

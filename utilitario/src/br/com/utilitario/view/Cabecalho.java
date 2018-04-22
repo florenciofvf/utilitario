@@ -20,7 +20,7 @@ public class Cabecalho extends View {
 		g.fillRect(x, y, largura, altura);
 
 		g.setColor(Constantes.COR_FONTE);
-		g.drawString(string, x + Constantes.DELTA_FONTE, yFonte);
+		g.drawString(string, xFonte, yFonte);
 	}
 
 	@Override
@@ -36,11 +36,12 @@ public class Cabecalho extends View {
 	@Override
 	public void calcularY(AtomicInteger acumulador) {
 		y = acumulador.getAndAdd(altura);
-		yFonte = y + altura;
+		yFonte = y + altura + Constantes.DELTA_Y_FONTE;
 	}
 
 	@Override
 	public void calcularX(int tab) {
 		x = tab;
+		xFonte = x + Constantes.DELTA_X_FONTE;
 	}
 }

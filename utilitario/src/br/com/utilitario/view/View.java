@@ -7,6 +7,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 public abstract class View {
 	protected int largura;
 	protected int altura;
+	protected int xFonte;
 	protected int yFonte;
 	protected int x;
 	protected int y;

@@ -13,7 +13,8 @@ public class Constantes {
 	public static final int ALTURA_LINHA_COLUNA = 15;
 	public static final int DELTA_LARGURA_FONTE = 10;
 	public static final int ALTURA_CABECALHO = 15;
-	public static final int DELTA_FONTE = 3;
+	public static final int DELTA_Y_FONTE = -2;
+	public static final int DELTA_X_FONTE = 3;
 
 	private Constantes() {
 	}
