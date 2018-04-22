@@ -15,7 +15,10 @@ public class LinhaColuna extends Linha {
 
 	@Override
 	public void desenhar(int[] xs, Graphics g) {
-		g.drawRect(x, y, largura, altura);
+		g.setColor(Constantes.COR_COLUNA);
+		g.fillRect(x, y, largura, altura);
+
+		g.setColor(Constantes.COR_FONTE);
 
 		for (int i = 0; i < dados.length; i++) {
 			g.drawString(dados[i], xs[i], yFonte);

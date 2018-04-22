@@ -16,7 +16,10 @@ public class Cabecalho extends View {
 
 	@Override
 	public void desenhar(Graphics g) {
-		g.drawRect(x, y, largura, altura);
+		g.setColor(Constantes.COR_CABECALHO);
+		g.fillRect(x, y, largura, altura);
+
+		g.setColor(Constantes.COR_FONTE);
 		g.drawString(string, x, yFonte);
 	}
 
