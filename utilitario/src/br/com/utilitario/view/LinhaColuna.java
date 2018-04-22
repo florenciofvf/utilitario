@@ -27,23 +27,23 @@ public class LinhaColuna extends Linha {
 	}
 
 	@Override
-	public void calcularAltura() {
+	public void configA() {
 		altura = Constantes.ALTURA_LINHA_COLUNA;
 	}
 
 	@Override
-	public void calcularY(AtomicInteger acumulador) {
+	public void configY(AtomicInteger acumulador) {
 		y = acumulador.getAndAdd(altura);
 		yFonte = y + altura + Constantes.DELTA_Y_FONTE;
 	}
 
 	@Override
-	public void calcularX(int tab) {
+	public void configX(int tab) {
 		x = tab;
 	}
 
 	@Override
-	public int getLargura(int i, FontMetrics fm) {
+	public int getL(int i, FontMetrics fm) {
 		return Util.getLargura(dados[i], fm);
 	}
 }

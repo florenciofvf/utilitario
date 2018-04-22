@@ -27,10 +27,10 @@ public class Painel extends JPanel {
 	public void configurar() {
 		Font font = getFont();
 		FontMetrics fm = getFontMetrics(font);
-		tabela.calcularLargura(fm);
-		tabela.calcularAltura();
-		tabela.calcularY(new AtomicInteger(40));
-		tabela.calcularX(40);
+		tabela.configL(fm);
+		tabela.configA();
+		tabela.configY(new AtomicInteger(40));
+		tabela.configX(40);
 	}
 
 	@Override

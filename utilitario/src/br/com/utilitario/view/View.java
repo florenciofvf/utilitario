@@ -12,13 +12,13 @@ public abstract class View {
 	protected int x;
 	protected int y;
 
-	public abstract void calcularY(AtomicInteger acumulador);
+	public abstract void configY(AtomicInteger acumulador);
 
-	public abstract void calcularLargura(FontMetrics fm);
+	public abstract void configL(FontMetrics fm);
 
 	public abstract void desenhar(Graphics g);
 
-	public abstract void calcularX(int tab);
+	public abstract void configX(int tab);
 
-	public abstract void calcularAltura();
+	public abstract void configA();
 }

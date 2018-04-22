@@ -24,23 +24,23 @@ public class Cabecalho extends View {
 	}
 
 	@Override
-	public void calcularLargura(FontMetrics fm) {
+	public void configL(FontMetrics fm) {
 		largura = Util.getLargura(string, fm);
 	}
 
 	@Override
-	public void calcularAltura() {
+	public void configA() {
 		altura = Constantes.ALTURA_CABECALHO;
 	}
 
 	@Override
-	public void calcularY(AtomicInteger acumulador) {
+	public void configY(AtomicInteger acumulador) {
 		y = acumulador.getAndAdd(altura);
 		yFonte = y + altura + Constantes.DELTA_Y_FONTE;
 	}
 
 	@Override
-	public void calcularX(int tab) {
+	public void configX(int tab) {
 		x = tab;
 		xFonte = x + Constantes.DELTA_X_FONTE;
 	}

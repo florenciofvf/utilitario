@@ -18,12 +18,12 @@ public abstract class Linha extends View {
 		this.dados = null;
 	}
 
-	public abstract int getLargura(int i, FontMetrics fm);
-
 	public abstract void desenhar(int[] xs, Graphics g);
 
+	public abstract int getL(int i, FontMetrics fm);
+
 	@Override
-	public void calcularLargura(FontMetrics fm) {
+	public void configL(FontMetrics fm) {
 	}
 
 	@Override

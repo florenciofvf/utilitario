@@ -18,33 +18,31 @@ public class LinhaTabela extends Linha {
 	}
 
 	@Override
-	public void calcularLargura(FontMetrics fm) {
-		tabela.calcularLargura(fm);
-		largura = tabela.largura;
-		largura += Constantes.MARGEM_DIREITA_LINHA_TABELA;
+	public void configL(FontMetrics fm) {
+		tabela.configL(fm);
+		largura = tabela.largura + Constantes.MARGEM_DIREITA_LINHA_TABELA;
 	}
 
 	@Override
-	public void calcularAltura() {
-		tabela.calcularAltura();
-		altura = tabela.altura;
-		altura += Constantes.MARGEM_SUPERIOR_LINHA_TABELA;
+	public void configA() {
+		tabela.configA();
+		altura = tabela.altura + Constantes.MARGEM_SUPERIOR_LINHA_TABELA;
 	}
 
 	@Override
-	public void calcularY(AtomicInteger acumulador) {
+	public void configY(AtomicInteger acumulador) {
 		y = acumulador.getAndAdd(altura);
-		tabela.calcularY(new AtomicInteger(y + Constantes.MARGEM_SUPERIOR_LINHA_TABELA / 2));
+		tabela.configY(new AtomicInteger(y + Constantes.MARGEM_SUPERIOR_LINHA_TABELA / 2));
 	}
 
 	@Override
-	public void calcularX(int tab) {
-		tabela.calcularX(tab + Constantes.MARGEM_DIREITA_LINHA_TABELA / 2);
+	public void configX(int tab) {
+		tabela.configX(tab + Constantes.MARGEM_DIREITA_LINHA_TABELA / 2);
 		x = tab;
 	}
 
 	@Override
-	public int getLargura(int i, FontMetrics fm) {
+	public int getL(int i, FontMetrics fm) {
 		return 0;
 	}
 }

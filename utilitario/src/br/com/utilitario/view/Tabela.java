@@ -21,9 +21,9 @@ public class Tabela extends View {
 		}
 	}
 
+	@Override
 	public void desenhar(Graphics g) {
 		cabecalho.desenhar(g);
-
 		linhaColuna.desenhar(xs, g);
 
 		for (int i = 0; i < linhas.length; i++) {
@@ -33,16 +33,16 @@ public class Tabela extends View {
 		g.drawRect(x, y, largura, altura);
 	}
 
-	private int larguraColunas(FontMetrics fm) {
+	private int configColunas(FontMetrics fm) {
 		int[] aux = new int[xs.length];
 		int total = 0;
 
 		for (int i = 0; i < xs.length; i++) {
-			int maior = linhaColuna.getLargura(i, fm);
+			int maior = linhaColuna.getL(i, fm);
 			int valor = 0;
 
 			for (int j = 0; j < linhas.length; j++) {
-				valor = linhas[j].getLargura(i, fm);
+				valor = linhas[j].getL(i, fm);
 
 				if (valor > maior) {
 					maior = valor;
@@ -60,16 +60,17 @@ public class Tabela extends View {
 		return total;
 	}
 
-	public void calcularLargura(FontMetrics fm) {
-		largura = larguraColunas(fm);
+	@Override
+	public void configL(FontMetrics fm) {
+		largura = configColunas(fm);
 
-		cabecalho.calcularLargura(fm);
+		cabecalho.configL(fm);
 		if (cabecalho.largura > largura) {
 			largura = cabecalho.largura;
 		}
 
 		for (int i = 0; i < linhas.length; i++) {
-			linhas[i].calcularLargura(fm);
+			linhas[i].configL(fm);
 
 			if (linhas[i].largura > largura) {
 				largura = linhas[i].largura;
@@ -78,50 +79,49 @@ public class Tabela extends View {
 
 		cabecalho.largura = largura;
 		linhaColuna.largura = largura;
+
 		for (int i = 0; i < linhas.length; i++) {
 			linhas[i].largura = largura;
 		}
 	}
 
 	@Override
-	public void calcularAltura() {
+	public void configA() {
 		altura = 0;
 
-		cabecalho.calcularAltura();
+		cabecalho.configA();
 		altura += cabecalho.altura;
 
-		linhaColuna.calcularAltura();
+		linhaColuna.configA();
 		altura += linhaColuna.altura;
 
 		for (int i = 0; i < linhas.length; i++) {
-			linhas[i].calcularAltura();
+			linhas[i].configA();
 			altura += linhas[i].altura;
 		}
 	}
 
 	@Override
-	public void calcularY(AtomicInteger acumulador) {
+	public void configY(AtomicInteger acumulador) {
 		y = acumulador.get();
 
-		cabecalho.calcularY(acumulador);
-
-		linhaColuna.calcularY(acumulador);
+		cabecalho.configY(acumulador);
+		linhaColuna.configY(acumulador);
 
 		for (int i = 0; i < linhas.length; i++) {
-			linhas[i].calcularY(acumulador);
+			linhas[i].configY(acumulador);
 		}
 	}
 
 	@Override
-	public void calcularX(int tab) {
+	public void configX(int tab) {
 		x = tab;
 
-		cabecalho.calcularX(tab);
-
-		linhaColuna.calcularX(tab);
+		cabecalho.configX(tab);
+		linhaColuna.configX(tab);
 
 		for (int i = 0; i < linhas.length; i++) {
-			linhas[i].calcularX(tab);
+			linhas[i].configX(tab);
 		}
 
 		for (int i = 0; i < xs.length; i++) {
