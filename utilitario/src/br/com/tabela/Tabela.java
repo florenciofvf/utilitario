@@ -34,7 +34,6 @@ public class Tabela extends View {
 	}
 
 	private int configColunas(FontMetrics fm) {
-		int[] aux = new int[xs.length];
 		int total = 0;
 
 		for (int i = 0; i < xs.length; i++) {
@@ -49,12 +48,8 @@ public class Tabela extends View {
 				}
 			}
 
-			aux[i] = maior;
-			total += aux[i];
-		}
-
-		for (int i = 1; i < xs.length; i++) {
-			xs[i] = aux[i - 1];
+			xs[i] = total;
+			total += maior;
 		}
 
 		return total;

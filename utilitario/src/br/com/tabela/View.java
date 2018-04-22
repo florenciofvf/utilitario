@@ -12,6 +12,10 @@ public abstract class View {
 	protected int x;
 	protected int y;
 
+	public int getLargura(String string, FontMetrics fm) {
+		return fm.stringWidth(string) + Constantes.DELTA_LARGURA_FONTE;
+	}
+
 	public abstract void configY(AtomicInteger acumulador);
 
 	public abstract void configL(FontMetrics fm);

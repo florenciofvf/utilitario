@@ -22,7 +22,7 @@ public class Cabecalho extends View {
 
 	@Override
 	public void configL(FontMetrics fm) {
-		largura = Util.getLargura(string, fm);
+		largura = getLargura(string, fm);
 	}
 
 	@Override

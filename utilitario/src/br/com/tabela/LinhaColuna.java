@@ -41,6 +41,6 @@ public class LinhaColuna extends Linha {
 
 	@Override
 	public int getL(int i, FontMetrics fm) {
-		return Util.getLargura(dados[i], fm);
+		return getLargura(dados[i], fm);
 	}
 }
