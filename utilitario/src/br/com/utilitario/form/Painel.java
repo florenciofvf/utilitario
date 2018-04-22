@@ -29,7 +29,7 @@ public class Painel extends JPanel {
 		FontMetrics fm = getFontMetrics(font);
 		tabela.calcularLargura(fm);
 		tabela.calcularAltura();
-		tabela.calcularY(new AtomicInteger(100));
+		tabela.calcularY(new AtomicInteger(40));
 		tabela.calcularX(40);
 	}
 

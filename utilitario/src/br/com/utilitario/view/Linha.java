@@ -28,5 +28,6 @@ public abstract class Linha extends View {
 
 	@Override
 	public void desenhar(Graphics g) {
+		g.drawRect(x, y, largura, altura);
 	}
 }

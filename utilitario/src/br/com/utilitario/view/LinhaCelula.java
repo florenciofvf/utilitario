@@ -22,6 +22,7 @@ public class LinhaCelula extends Linha {
 
 		for (int i = 0; i < dados.length; i++) {
 			g.drawString(dados[i], xs[i] + Constantes.DELTA_X_FONTE, yFonte);
+			g.drawLine(xs[i], y, xs[i], y + altura);
 		}
 	}
 
