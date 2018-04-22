@@ -29,6 +29,8 @@ public class Tabela extends View {
 		for (int i = 0; i < linhas.length; i++) {
 			linhas[i].desenhar(xs, g);
 		}
+
+		g.drawRect(x, y, largura, altura);
 	}
 
 	private int larguraColunas(FontMetrics fm) {
@@ -99,6 +101,8 @@ public class Tabela extends View {
 
 	@Override
 	public void calcularY(AtomicInteger acumulador) {
+		y = acumulador.get();
+
 		cabecalho.calcularY(acumulador);
 
 		linhaColuna.calcularY(acumulador);
@@ -110,6 +114,8 @@ public class Tabela extends View {
 
 	@Override
 	public void calcularX(int tab) {
+		x = tab;
+
 		cabecalho.calcularX(tab);
 
 		linhaColuna.calcularX(tab);

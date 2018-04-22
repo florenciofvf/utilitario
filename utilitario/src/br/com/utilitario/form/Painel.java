@@ -30,7 +30,7 @@ public class Painel extends JPanel {
 		tabela.calcularLargura(fm);
 		tabela.calcularAltura();
 		tabela.calcularY(new AtomicInteger(100));
-		tabela.calcularX(100);
+		tabela.calcularX(40);
 	}
 
 	@Override

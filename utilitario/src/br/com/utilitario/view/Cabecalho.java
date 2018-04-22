@@ -20,7 +20,7 @@ public class Cabecalho extends View {
 		g.fillRect(x, y, largura, altura);
 
 		g.setColor(Constantes.COR_FONTE);
-		g.drawString(string, x, yFonte);
+		g.drawString(string, x + Constantes.DELTA_FONTE, yFonte);
 	}
 
 	@Override

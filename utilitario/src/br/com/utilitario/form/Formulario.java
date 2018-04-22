@@ -65,8 +65,24 @@ public class Formulario extends JFrame {
 
 		LinhaColuna colunas = new LinhaColuna(new String[] { "COLUNA 1", "COLUNA 2" });
 
-		Linha[] linhas = new Linha[1];
-		linhas[0] = new LinhaCelula(new String[] { "REQUERIMENTO DE TESTE", "valor-2" });
+		Linha[] linhas = new Linha[4];
+		linhas[0] = new LinhaCelula(new String[] { "REQUERIMENTO DE TESTE", "NOME DA PESSOA JURÍDICA" });
+		linhas[1] = new LinhaCelula(new String[] { "REQUERIMENTO DE TESTE", "PESSOA FÍSICA" });
+		linhas[2] = criarLinhaTabela2();
+		linhas[3] = criarLinhaTabela2();
+
+		return new LinhaTabela(new Tabela(cabecalho, colunas, linhas));
+	}
+
+	private Linha criarLinhaTabela2() {
+		Cabecalho cabecalho = new Cabecalho("PRODUTOS");
+
+		LinhaColuna colunas = new LinhaColuna(new String[] { "PRODUTO", "QUANTIDADE" });
+
+		Linha[] linhas = new Linha[3];
+		linhas[0] = new LinhaCelula(new String[] { "ARROZ", "R$ 3,99" });
+		linhas[1] = new LinhaCelula(new String[] { "FEIJÁO", "R$ 2,99" });
+		linhas[2] = new LinhaCelula(new String[] { "MACARRÃO", "R$ 1,99" });
 
 		return new LinhaTabela(new Tabela(cabecalho, colunas, linhas));
 	}

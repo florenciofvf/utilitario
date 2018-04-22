@@ -21,7 +21,7 @@ public class LinhaColuna extends Linha {
 		g.setColor(Constantes.COR_FONTE);
 
 		for (int i = 0; i < dados.length; i++) {
-			g.drawString(dados[i], xs[i], yFonte);
+			g.drawString(dados[i], xs[i] + Constantes.DELTA_FONTE, yFonte);
 			//g.drawLine(xs[i], y, xs[i], y + altura);
 		}
 	}
