@@ -22,7 +22,7 @@ public class Formulario extends JFrame {
 		super("Util");
 
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
-		setSize(600, 500);
+		setSize(700, 600);
 		montarLayout();
 
 		setLocationRelativeTo(null);

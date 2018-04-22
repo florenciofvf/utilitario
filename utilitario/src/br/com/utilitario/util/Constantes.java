@@ -9,6 +9,9 @@ public class Constantes {
 	public static final Color COR_COLUNA = new Color(130, 140, 30);
 	public static final Color COR_FONTE = Color.BLACK;
 
+	public static final int MARGEM_SUPERIOR_LINHA_TABELA = 10;
+	public static final int MARGEM_DIREITA_LINHA_TABELA = 10;
+
 	public static final int ALTURA_LINHA_CELULA = 15;
 	public static final int ALTURA_LINHA_COLUNA = 15;
 	public static final int DELTA_LARGURA_FONTE = 10;
